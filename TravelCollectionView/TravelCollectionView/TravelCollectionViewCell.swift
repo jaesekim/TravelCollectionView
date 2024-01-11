@@ -37,7 +37,7 @@ class TravelCollectionViewCell: UICollectionViewCell {
     func setDataInCell(city: City) {
         let imgUrl = URL(string: city.city_image)
         mainImageView.kf.setImage(with: imgUrl)
-        mainImageView.contentMode = .scaleAspectFill
+        mainImageView.contentMode = .scaleToFill
         
         cityNameLabel.text = "\(city.city_name) | \(city.city_english_name)"
         cityExplainLabel.text = city.city_explain

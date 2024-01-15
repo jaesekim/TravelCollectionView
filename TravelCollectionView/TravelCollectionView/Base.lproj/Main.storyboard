@@ -12,15 +12,22 @@
         <!--Travel View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TravelViewController" customModule="TravelCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TravelViewController" id="BYZ-38-t0r" customClass="TravelViewController" customModule="TravelCollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GOW-6b-cWS">
-                                <rect key="frame" x="40" y="115" width="313" height="31"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZxX-he-1cX">
+                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="H7i-J2-qIN"/>
+                                    <constraint firstAttribute="height" constant="44" id="sY1-eb-hWT"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GOW-6b-cWS">
+                                <rect key="frame" x="40" y="155" width="313" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xrr-jj-Wb6"/>
                                 </constraints>
                                 <segments>
                                     <segment title="First"/>
@@ -28,7 +35,7 @@
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w7p-rT-k1I">
-                                <rect key="frame" x="0.0" y="165" width="393" height="633"/>
+                                <rect key="frame" x="0.0" y="197" width="393" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OHI-iA-Rdg">
                                     <size key="itemSize" width="128" height="128"/>
@@ -51,17 +58,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GOW-6b-cWS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="4rF-QM-lbk"/>
-                            <constraint firstItem="GOW-6b-cWS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Amp-Jg-abu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w7p-rT-k1I" secondAttribute="trailing" id="Iti-3W-Kzg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GOW-6b-cWS" secondAttribute="trailing" constant="40" id="JrI-Mp-Q4G"/>
-                            <constraint firstItem="w7p-rT-k1I" firstAttribute="top" secondItem="GOW-6b-cWS" secondAttribute="bottom" constant="20" id="UWG-LO-iJv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w7p-rT-k1I" secondAttribute="bottom" constant="20" id="rdz-wx-rvm"/>
-                            <constraint firstItem="w7p-rT-k1I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rr3-Yd-Ixn"/>
+                            <constraint firstItem="GOW-6b-cWS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="7Hd-qb-FbM"/>
+                            <constraint firstItem="w7p-rT-k1I" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8Rk-aj-tpV"/>
+                            <constraint firstItem="w7p-rT-k1I" firstAttribute="top" secondItem="GOW-6b-cWS" secondAttribute="bottom" constant="12" id="Lpe-1B-8t8"/>
+                            <constraint firstItem="ZxX-he-1cX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NSO-mM-pAX"/>
+                            <constraint firstItem="ZxX-he-1cX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YqV-BW-5p1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w7p-rT-k1I" secondAttribute="bottom" id="a4O-ns-ZjG"/>
+                            <constraint firstItem="GOW-6b-cWS" firstAttribute="top" secondItem="ZxX-he-1cX" secondAttribute="bottom" constant="8" id="dfD-7O-nqb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GOW-6b-cWS" secondAttribute="trailing" constant="40" id="gfK-0h-mGi"/>
+                            <constraint firstItem="ZxX-he-1cX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m1m-mz-TuK"/>
+                            <constraint firstItem="w7p-rT-k1I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sYO-Iy-KWe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6YM-5t-3U3"/>
                     <connections>
+                        <outlet property="searchBar" destination="ZxX-he-1cX" id="gWl-LQ-aeg"/>
                         <outlet property="segControl" destination="GOW-6b-cWS" id="bFn-l7-2EY"/>
                         <outlet property="travelCollection" destination="w7p-rT-k1I" id="b5w-oh-Z0o"/>
                     </connections>

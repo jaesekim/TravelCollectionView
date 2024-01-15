@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B10DBA02B55C5BC00AEC030 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B10DB9F2B55C5BC00AEC030 /* Theater.swift */; };
 		7BFDCFE92B4EA5210028604C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFDCFE82B4EA5210028604C /* AppDelegate.swift */; };
 		7BFDCFEB2B4EA5210028604C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFDCFEA2B4EA5210028604C /* SceneDelegate.swift */; };
 		7BFDCFED2B4EA5210028604C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFDCFEC2B4EA5210028604C /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B10DB9F2B55C5BC00AEC030 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
 		7BFDCFE52B4EA5210028604C /* TravelCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFDCFE82B4EA5210028604C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BFDCFEA2B4EA5210028604C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				7BFDD0522B4FF6D70028604C /* TravelInfo.swift */,
 				7BFDD0542B4FF9C90028604C /* City.swift */,
+				7B10DB9F2B55C5BC00AEC030 /* Theater.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				7BFDD0002B4EA5AC0028604C /* UIViewContoller+Extension.swift in Sources */,
 				7BFDD0752B5080C10028604C /* AdListTableViewCell.swift in Sources */,
 				7BFDCFED2B4EA5210028604C /* ViewController.swift in Sources */,
+				7B10DBA02B55C5BC00AEC030 /* Theater.swift in Sources */,
 				7BFDD0552B4FF9C90028604C /* City.swift in Sources */,
 				7BFDCFE92B4EA5210028604C /* AppDelegate.swift in Sources */,
 				7BFDCFEB2B4EA5210028604C /* SceneDelegate.swift in Sources */,

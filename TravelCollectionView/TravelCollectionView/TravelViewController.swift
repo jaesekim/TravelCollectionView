@@ -9,19 +9,21 @@ import UIKit
 
 
 class TravelViewController: UIViewController, ViewProtocol {
-    var city: [City] = []  // segment 클릭될 때마다 업데이트 되면서 실질적으로 화면 보여줄 데이터 리스트
+    
     
     @IBOutlet var segControl: UISegmentedControl!
     @IBOutlet var travelCollection: UICollectionView!
+    @IBOutlet var searchBar: UISearchBar!
     
+    let originalList = City.cityOriginal
+    var city: [City] = [] // segment 클릭될 때마다 업데이트 되면서 실질적으로 화면 보여줄 데이터 리스트
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureView()
         
         // collection view와 view controller 연결
-        travelCollection.delegate = self
-        travelCollection.dataSource = self
+        
         
         // segmentedController 설정
         setSegmented()
@@ -67,6 +69,10 @@ extension TravelViewController {
     func configureView() {
         // title 설정
         navigationItem.title = "인기 도시"
+            
+        travelCollection.delegate = self
+        travelCollection.dataSource = self
+        searchBar.delegate = self
     }
 }
 
@@ -91,5 +97,44 @@ extension TravelViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let sb = UIStoryboard(name: "TravelList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "TravelListViewController") as! TravelListViewController
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension TravelViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var filteredData: [City] = []
+        
+        let searched = searchBar.text!.lowercased()
+        
+        if searched == "" {
+            city = originalList
+        } else {
+            for item in originalList {
+                if item.city_name.contains(searched) || item.city_english_name.lowercased().contains(searched) || item.city_explain.contains(searched) {
+                    filteredData.append(item)
+                }
+            }
+            city = filteredData
+        }
+        travelCollection.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        var filteredData: [City] = []
+        
+        let searched = searchBar.text!.lowercased()
+        
+        if searched == "" {
+            city = originalList
+        } else {
+            for item in originalList {
+                if item.city_name.contains(searched) || item.city_english_name.lowercased().contains(searched) || item.city_explain.contains(searched) {
+                    filteredData.append(item)
+                }
+            }
+            city = filteredData
+        }
+        travelCollection.reloadData()
     }
 }

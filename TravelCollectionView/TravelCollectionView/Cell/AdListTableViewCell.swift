@@ -15,6 +15,8 @@ class AdListTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.backgroundColor = .systemGreen
         self.layer.cornerRadius = 10
+        
+        contentLabel.numberOfLines = 0
     }
 
     func setDataInCell(travelInfo: TravelInfo) {
